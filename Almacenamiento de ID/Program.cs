@@ -19,7 +19,7 @@ namespace Almacenamiento_de_ID
                 val1 = true;
                 Console.Clear();
                 Console.WriteLine("1. Ingreso de 3 estudiantes:");
-                Console.WriteLine("2. Mostrar los nombres de los estudiantes");
+                Console.WriteLine("2. buscar los nombres de los estudiantes");
                 Console.WriteLine("3. Limpiar lista de estudiantes");
                 Console.WriteLine("4. salir");
                 Console.Write("Elija una opcion:");
