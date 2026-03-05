@@ -17,6 +17,7 @@ namespace Almacenamiento_de_ID
             do
             {
                 val1 = true;
+                Console.Clear();
                 Console.WriteLine("1. Ingreso de 3 estudiantes:");
                 Console.WriteLine("2. Mostrar los nombres de los estudiantes");
                 Console.WriteLine("3. Limpiar lista de estudiantes");
@@ -31,7 +32,6 @@ namespace Almacenamiento_de_ID
                         {
                             for (int i = 0; i < 3; i++)
                             {
-                                val2 = false;
                                 Console.Write($"Ingrese ID del estudiante {i+1}:");
                                 int id_estudiante = int.Parse(Console.ReadLine());
                                 Console.Write($"Ingrese el Nombre del estudiante {i+1}:");
@@ -46,14 +46,29 @@ namespace Almacenamiento_de_ID
                         Console.WriteLine("\nPrecione cualquier tecla para salir");
                         Console.ReadKey();
                         break;
+
                     case 2:
+                        Console.Clear();
                         if(id.Count != 0)
                         {
-                            int cont1 = 1;
-                            foreach(var estudiante in id)
+                            Console.Write("Ingrese el ID del estudante que busca:");
+                            int buscar = int.Parse(Console.ReadLine());
+                            val2 = true;
+                            foreach (var estudiante in id)
                             {
-                                Console.WriteLine($"{cont1}. ID: {estudiante} \n Nombre:{estudiante}");
-                                cont1++;
+                                val2 = true;
+                                if (buscar == estudiante.Key)
+                                {
+                                    Console.WriteLine($"Se encontro el estudiante, Nombre:{estudiante.Value}");
+                                }
+                                else
+                                {
+                                    val2 = false;
+                                }
+                            }
+                            if(val2 == false)
+                            {
+                                Console.WriteLine("No se encontro el estudiante!");
                             }
                         }
                         else
@@ -63,9 +78,19 @@ namespace Almacenamiento_de_ID
                         Console.WriteLine("\nPrecione cualquier tecla para salir");
                         Console.ReadKey();
                         break;
+
                     case 3:
-                        if(id.Count != 0)
-                        { }
+                        Console.Clear();
+                        if (id.Count != 0)
+                        {
+                            Console.Write("¿Quiere eliminar los datos ingresados(Si/No)?");
+                            string eliminar = Console.ReadLine();
+                            if(eliminar == "Si")
+                            {
+                                id.Clear();
+                                Console.WriteLine("Se elimino la renta");
+                            }
+                        }
                         else
                         {
                             Console.WriteLine("No a ingresado los 3 estudiantes!");
@@ -74,12 +99,14 @@ namespace Almacenamiento_de_ID
                         Console.ReadKey();
                         break;
                     case 4:
+                        Console.Clear();
                         Console.WriteLine("Saliendo..");
                         val1 = false;
                         break;
                     default:
+                        Console.Clear();
                         Console.WriteLine("Opcion no valida!");
-                        Thread.Sleep(5000);
+                        Thread.Sleep(500);
                         break;
                 }
             }while (val1);
