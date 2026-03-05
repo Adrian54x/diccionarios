@@ -23,7 +23,16 @@ namespace producto_por_nombre
                 Console.Write("Elija una opcion:");
                 int opcion1 = int.Parse(Console.ReadLine());
                 switch (opcion1)
-            }while (val1);
+                {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    default:
+                        break;
+                }
+                  
+             }while (val1);
         }
     }
 }
