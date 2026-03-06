@@ -47,13 +47,20 @@ namespace producto_por_nombre
                     case 2:
                         Console.Clear();
                         int cont1 = 1;
-                        foreach(var producto in codigo)
+                        if (codigo.Count > 0)
                         {
-                            Console.WriteLine($"{cont1}. \nProducto:{producto.Value} \nCodigo:{producto.Key}");
-                            cont1++;
+                            foreach (var producto in codigo)
+                            {
+                                Console.WriteLine($"{cont1}. \nProducto:{producto.Value} \nCodigo:{producto.Key}");
+                                cont1++;
+                            }
+                            Console.WriteLine("\nPrecione cualquier tecla para salir");
+                            Console.ReadKey();
                         }
-                        Console.WriteLine("\nPrecione cualquier tecla para salir");
-                        Console.ReadKey();
+                        else
+                        {
+                            Console.WriteLine("No hay ningun producto aun!");
+                        }
                         break;
                     case 3:
                         Console.Clear();
