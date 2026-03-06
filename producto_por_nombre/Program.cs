@@ -41,6 +41,7 @@ namespace producto_por_nombre
                         else
                         {
                             Console.WriteLine("Ya ingreso los 3 productos!");
+                            Thread.Sleep(500);
                         }
                         break;
 
@@ -60,25 +61,36 @@ namespace producto_por_nombre
                         else
                         {
                             Console.WriteLine("No hay ningun producto aun!");
+                            Thread.Sleep(500);
                         }
                         break;
                     case 3:
                         Console.Clear();
-                        Console.WriteLine("¿Dese borrar los datos ingresados (Si/no)?");
-                        string borrar = Console.ReadLine();
-                        if (borrar.StartsWith("S")|| borrar.StartsWith("s"))
+                        if (codigo.Count > 0)
                         {
-                            codigo.Clear();
-                            Console.WriteLine("Se borro la lista");
+                            Console.WriteLine("¿Dese borrar los datos ingresados (Si/No)?");
+                            string borrar = Console.ReadLine();
+                            if (borrar.StartsWith("S") || borrar.StartsWith("s"))
+                            {
+                                codigo.Clear();
+                                Console.WriteLine("Se borro la lista");
+                            }
+                            Console.WriteLine("\nPrecione cualquier tecla para salir");
+                            Console.ReadKey();
                         }
-                        Console.WriteLine("\nPrecione cualquier tecla para salir");
-                        Console.ReadKey();
+                        else
+                        {
+                            Console.WriteLine("No hay ningun producto aun!");
+                            Thread.Sleep(500);
+                        }
                         break;
+
                     case 4:
                         Console.Clear();
                         val1 = false;
                         Console.WriteLine("Saliendo...");
                         break;
+
                     default:
                         Console.Clear();
                         Console.WriteLine("Opcion no valida");
