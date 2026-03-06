@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -46,13 +47,27 @@ namespace Calificacion_de_estudiante
                             nota_estudiante.Add(nombre, nota);
                         }while (val2);
                         break;
+
                     case 2:
+                        Console.Write("Escriba el nombre del estudiante que busca:");
+                        string estudiante = Console.ReadLine();
+                        foreach(var estudiante_n in nota_estudiante)
+                        {
+                            val2 = false;
+                            if(estudiante == estudiante_n.Key)
+                            {
+                                Console.WriteLine($"Su nota es: {estudiante_n.Value}");
+                            }
+                        }
                         break;
+
                     case 3:
+
                     case 4:
                         val1 = false;
                         Console.WriteLine("Saliendo...");
                         break;
+
                     default:
                         Console.WriteLine("Opcion no valida");
                         Thread.Sleep(500);
