@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Calificacion_de_estudiante
@@ -10,8 +12,8 @@ namespace Calificacion_de_estudiante
     {
         static void Main(string[] args)
         {
-            Dictionary<string, int> nota_estudiante = new Dictionary<string, int>();
-            bool val1;
+            Dictionary<string, double> nota_estudiante = new Dictionary<string, double>();
+            bool val1,val2;
             do
             {
                 Console.Clear();
@@ -22,13 +24,38 @@ namespace Calificacion_de_estudiante
                 Console.WriteLine("4. Salir");
                 Console.Write("Elija una opcion:");
                 int opcion = int.Parse(Console.ReadLine());
+                Console.Clear();
                 switch(opcion)
                 {
                     case 1:
+                        Console.WriteLine("precione doble enter para salir!");
+                        do
+                        {
+                            val2 = true;
+                            Console.WriteLine($"\nEstudiante {nota_estudiante.Count+1}:");
+                            Console.Write("Nombre:");
+                            string nombre = Console.ReadLine();
+                            if(nombre == "")
+                            {
+                                Console.WriteLine("Regresando a menu principal...");
+                                Thread.Sleep(500);
+                                break; 
+                            }
+                            Console.Write("Nota:");
+                            double nota = double.Parse(Console.ReadLine());
+                            nota_estudiante.Add(nombre, nota);
+                        }while (val2);
+                        break;
                     case 2:
+                        break;
                     case 3:
                     case 4:
+                        val1 = false;
+                        Console.WriteLine("Saliendo...");
+                        break;
                     default:
+                        Console.WriteLine("Opcion no valida");
+                        Thread.Sleep(500);
                         break;
                        
                 }
