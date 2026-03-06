@@ -27,13 +27,20 @@ namespace producto_por_nombre
                 {
                     case 1:
                         Console.Clear();
-                        for (int i = 0; i < 3; i++)
+                        if (codigo.Count == 0)
                         {
-                            Console.Write($"Ingrese el producto {i+1}:");
-                            string producto = Console.ReadLine();
-                            Console.Write($"Ingrese el codigo del producto {i + 1}:");
-                            int codigo_x = int.Parse(Console.ReadLine());
-                            codigo.Add(codigo_x, producto);
+                            for (int i = 0; i < 3; i++)
+                            {
+                                Console.Write($"Ingrese el producto {i + 1}:");
+                                string producto = Console.ReadLine();
+                                Console.Write($"Ingrese el codigo del producto {i + 1}:");
+                                int codigo_x = int.Parse(Console.ReadLine());
+                                codigo.Add(codigo_x, producto);
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Ya ingreso los 3 productos!");
                         }
                         break;
 
@@ -42,13 +49,23 @@ namespace producto_por_nombre
                         int cont1 = 1;
                         foreach(var producto in codigo)
                         {
-                            Console.WriteLine($"{cont1}. \nProducto:{codigo.Values} \nCodigo:{codigo.Keys}");
+                            Console.WriteLine($"{cont1}. \nProducto:{producto.Value} \nCodigo:{producto.Key}");
                             cont1++;
                         }
-                        Console.WriteLine("Precione");
+                        Console.WriteLine("\nPrecione cualquier tecla para salir");
+                        Console.ReadKey();
                         break;
                     case 3:
                         Console.Clear();
+                        Console.WriteLine("¿Dese borrar los datos ingresados (Si/no)?");
+                        string borrar = Console.ReadLine();
+                        if (borrar.StartsWith("S")|| borrar.StartsWith("s"))
+                        {
+                            codigo.Clear();
+                            Console.WriteLine("Se borro la lista");
+                        }
+                        Console.WriteLine("\nPrecione cualquier tecla para salir");
+                        Console.ReadKey();
                         break;
                     case 4:
                         Console.Clear();
@@ -60,8 +77,7 @@ namespace producto_por_nombre
                         Console.WriteLine("Opcion no valida");
                         Thread.Sleep(500);
                         break;
-                }
-                  
+                }      
              }while (val1);
         }
     }
