@@ -1,6 +1,7 @@
 ﻿using System;
 using System.CodeDom;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -42,10 +43,10 @@ namespace Calificacion_de_estudiante
                                 Thread.Sleep(500);
                                 break; 
                             }
-                            Console.Write("Nota:");
                             double nota;
                             do
                             {
+                                Console.Write("Nota:");
                                 nota = double.Parse(Console.ReadLine());
                                 if(nota < 0)
                                 {
@@ -54,38 +55,62 @@ namespace Calificacion_de_estudiante
                             } while (nota < 0);
                             nota_estudiante.Add(nombre, nota);
                         } while (val2);
+                        break;
+
+                    case 2:
+                        if (nota_estudiante.Count > 0)
+                        {
+                            Console.Write("Escriba el nombre del estudiante que busca:");
+                            string estudiante = Console.ReadLine();
+                            val2 = false;
+                            foreach (var estudiante_n in nota_estudiante)
+                            {
+                                if (estudiante == estudiante_n.Key)
+                                {
+                                    Console.WriteLine($"Su nota es: {estudiante_n.Value}");
+                                    val2 = true;
+                                }
+                            }
+                            if (val2 == false)
+                            {
+                                Console.WriteLine("Estudiante no encontrado!");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No hay estudiantes aun!");
+                        }
                         Console.WriteLine("\nPrecione cualquier tecla para salir");
                         Console.ReadKey();
                         break;
 
-                    case 2:
-                        Console.Write("Escriba el nombre del estudiante que busca:");
-                        string estudiante = Console.ReadLine();
-                        val2 = false;
-                        foreach (var estudiante_n in nota_estudiante)
-                        { 
-                            if(estudiante == estudiante_n.Key)
+                    case 3:
+                        if (nota_estudiante.Count > 0)
+                        {
+                            int cont1 = 1;
+                            foreach (var nombrex in nota_estudiante)
                             {
-                                Console.WriteLine($"Su nota es: {estudiante_n.Value}");
-                                val2 = true;
+                                Console.WriteLine($"{cont1}. {nombrex.Key}");
+                                cont1++;
+                            }
+                            Console.WriteLine("\nprecione enter si no quiere eliminar");
+                            Console.Write("Escriba que estudinte va a eliminar:");
+                            String eliminar = Console.ReadLine();
+                            if (nota_estudiante.Remove(eliminar))
+                            {
+                                Console.WriteLine("Se elimino el estudiante");
+                            }
+                            else
+                            {
+                                Console.WriteLine("No se encontro el estudiante!");
                             }
                         }
-                        if(val2 == false)
+                        else
                         {
-                            Console.WriteLine("Estudiante no encontrado!");
+                            Console.WriteLine("No hay estudiantes aun!");
                         }
-                        break;
-
-                    case 3:
-                        int cont1 = 1;
-                        foreach(var nombrex in nota_estudiante)
-                        {
-                            Console.WriteLine($"{cont1}. {nombrex}");
-                        }
-                        Console.WriteLine("\nprecione enter si no quiere eliminar");
-                        Console.Write("Escriba que estudinte va a eliminar:");
-                        String eliminar = Console.ReadLine();
-                        nota_estudiante.Remove(eliminar);
+                Console.WriteLine("\nPrecione cualquier tecla para salir");
+                        Console.ReadKey();
                         break;
 
                     case 4:
