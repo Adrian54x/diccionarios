@@ -109,7 +109,7 @@ namespace Calificacion_de_estudiante
                         {
                             Console.WriteLine("No hay estudiantes aun!");
                         }
-                Console.WriteLine("\nPrecione cualquier tecla para salir");
+                        Console.WriteLine("\nPrecione cualquier tecla para salir");
                         Console.ReadKey();
                         break;
 

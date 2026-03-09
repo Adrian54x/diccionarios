@@ -1,5 +1,22 @@
 <Solution>
   <Project Path="Almacenamiento de ID/Almacenamiento de ID.csproj" Id="35b1bc81-71af-495a-a3f5-13cf526a414b" />
+  <Project Path="Buscar_nota_por_nombre/Buscar_nota_por_nombre.csproj" Id="a9985198-7e57-4e89-bc05-d3f78f0871ce" />
   <Project Path="Calificacion_de_estudiante/Calificacion_de_estudiante.csproj" Id="0e231593-7ab0-4ff1-b464-55896489e049" />
+  <Project Path="Ciudades_por_código/Ciudades_por_código.csproj" Id="f6aab01f-71b3-4a2a-bd36-312197ac248c" />
+  <Project Path="Claves_y_valores_de_ciudades/Claves_y_valores_de_ciudades.csproj" Id="07f60820-061d-4b4c-a382-d4e56281b3b2" />
+  <Project Path="Eliminar_estudiante/Eliminar_estudiante.csproj" Id="8f04a4a5-8986-47cb-b38d-2ce72aad3f2a" />
+  <Project Path="Eliminar_producto_por_codigo/Eliminar_producto_por_codigo.csproj" Id="7520ff38-730a-496e-b4ff-2dff6fc6a539" />
+  <Project Path="Inventario_con_menu/Inventario_con_menu.csproj" Id="dd28d0ec-06a3-4e3e-82aa-7f13b9d7a90e" />
+  <Project Path="Lista_de_empleados/Lista_de_empleados.csproj" Id="fb2fc4f9-1684-443f-95d1-bc3824f8a6ba" />
+  <Project Path="Lista_de_productos/Lista_de_productos.csproj" Id="448042a9-8325-419b-b91d-c240c113b053" />
+  <Project Path="Men_de_estudiantes/Men_de_estudiantes.csproj" Id="910f90d6-815e-4df5-8456-f4e1332c4340" />
+  <Project Path="Modificar_empleado/Modificar_empleado.csproj" Id="cc3dbbda-7a38-425b-9010-9f2232333ba4" />
   <Project Path="producto_por_nombre/producto_por_nombre.csproj" Id="8299715c-5e23-4289-83d7-51de4cb7c876" />
+  <Project Path="Promedio_de_notas/Promedio_de_notas.csproj" Id="91ae0adf-7573-42a5-8a50-c685391ffef8" />
+  <Project Path="Recorrer_estudiantes/Recorrer_estudiantes.csproj" Id="902463a8-8119-4f13-a0ab-0c3c5f6f4505" />
+  <Project Path="Registro_de_estudiantes_con_tupla/Registro_de_estudiantes_con_tupla.csproj" Id="6e2c89dc-a577-439f-8d8c-6ea02a14432f" />
+  <Project Path="Registro_de_usuarios/Registro_de_usuarios.csproj" Id="d7a71205-e189-4b9c-9f17-00d8a43a0be4" />
+  <Project Path="Registro_usuarios/Registro_usuarios.csproj" Id="312e294c-9328-47a7-a1ff-6ecebeeb8919" />
+  <Project Path="Usuarios_y_pass/Usuarios_y_pass.csproj" Id="54409ada-bc91-4eb8-b9e7-d0604003100f" />
+  <Project Path="Verificar_producto_existente/Verificar_producto_existente.csproj" Id="898f4fb2-a6e5-4c69-bdc3-808ec034252a" />
 </Solution>
