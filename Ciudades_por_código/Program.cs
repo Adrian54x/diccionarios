@@ -40,47 +40,66 @@ namespace Ciudades_por_código
                         break;
 
                     case 2:
-                        Console.Write("Ingrese el codigo de la ciudad que busca:");
-                        int buscar = int.Parse(Console.ReadLine());
-                        val2 = true;
-                        foreach(var buscar_x in ciudad)
+                        if (ciudad.Count > 0)
                         {
-                            if(buscar == buscar_x.Key)
+                            Console.Write("Ingrese el codigo de la ciudad que busca:");
+                            int buscar = int.Parse(Console.ReadLine());
+                            val2 = true;
+                            foreach (var buscar_x in ciudad)
                             {
-                                Console.WriteLine($"la ciudad es:{buscar_x.Value}");
-                                val2 = false;
+                                if (buscar == buscar_x.Key)
+                                {
+                                    Console.WriteLine($"la ciudad es:{buscar_x.Value}");
+                                    val2 = false;
+                                }
+                            }
+                            if (val2)
+                            {
+                                Console.WriteLine("No se encontro la ciudad!");
                             }
                         }
-                        if(val2)
+                        else
                         {
-                            Console.WriteLine("No se encontro la ciudad!");
+                            Console.WriteLine("No ahi aun ningun dato!");
                         }
+                        Console.WriteLine("\nPrecione cualquier tecla para regresar");
+                        Console.ReadKey();
                         break;
 
                     case 3:
-                        do
+                        if (ciudad.Count > 0)
                         {
-                            val2 = true;
-                            Console.Clear();
-                            Console.Write("¿Desea borrar las ciudades ingresadas (Si/No)?:");
-                            string eliminar = Console.ReadLine();
-                            if (eliminar.StartsWith("S") || eliminar.StartsWith("s"))
+                            do
                             {
-                                ciudad.Clear();
-                                Console.WriteLine("Se elimino las ciudades");
-                                val2 = false;
-                            }
-                            else if (eliminar.StartsWith("N") || eliminar.StartsWith("n"))
-                            {
-                                Console.WriteLine("Regresando...");
-                                Thread.Sleep(500);
-                                val2 = false;
-                            }
-                            else
-                            {
-                                Console.WriteLine("Opcion no valida!");
-                            }
-                        }while (val2);
+                                val2 = true;
+                                Console.Clear();
+                                Console.Write("¿Desea borrar las ciudades ingresadas (Si/No)?:");
+                                string eliminar = Console.ReadLine();
+                                if (eliminar.StartsWith("S") || eliminar.StartsWith("s"))
+                                {
+                                    ciudad.Clear();
+                                    Console.WriteLine("Se elimino las ciudades");
+                                    val2 = false;
+                                }
+                                else if (eliminar.StartsWith("N") || eliminar.StartsWith("n"))
+                                {
+                                    Console.WriteLine("Regresando...");
+                                    Thread.Sleep(500);
+                                    val2 = false;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Opcion no valida!");
+                                    Thread.Sleep(500);
+                                }
+                            } while (val2);
+                        }
+                        else
+                        {
+                            Console.WriteLine("No ahi aun ningun dato!");
+                            Console.WriteLine("\nPrecione cualquier tecla para regresar");
+                            Console.ReadKey();
+                        }
                         break;
 
                     case 4:
