@@ -12,7 +12,7 @@ namespace Ciudades_por_código
         static void Main(string[] args)
         {
             Dictionary<int,string> ciudad = new Dictionary<int,string>();
-            bool val1;
+            bool val1,val2;
             do
             {
                 Console.Clear();
@@ -27,17 +27,53 @@ namespace Ciudades_por_código
                 switch (opcion)
                 {
                     case 1:
+                        Console.WriteLine("Ingrese 5 ciudades");
+                        for(int i = 1; i <= 5; i++)
+                        {
+                            Console.WriteLine($"\n{i}.");
+                            Console.Write("Ciudad:");
+                            string ciudad_x = Console.ReadLine();
+                            Console.Write("Codigo:");
+                            int codigo = int.Parse(Console.ReadLine());
+                            ciudad.Add(codigo, ciudad_x);
+                        }
+                        break;
                     case 2:
                     case 3:
-                    case 4:
-                    val1 = false;
-                    Console.WriteLine("Saliendo...");
-                    break;
+                        do
+                        {
+                            val2 = true;
+                            Console.Clear();
+                            Console.Write("¿Desea borrar las ciudades ingresadas (Si/No)?:");
+                            string eliminar = Console.ReadLine();
+                            if (eliminar.StartsWith("S") || eliminar.StartsWith("s"))
+                            {
+                                ciudad.Clear();
+                                Console.WriteLine("Se elimino las ciudades");
+                                val2 = false;
+                            }
+                            else if (eliminar.StartsWith("N") || eliminar.StartsWith("n"))
+                            {
+                                Console.WriteLine("Regresando...");
+                                Thread.Sleep(500);
+                                val2 = false;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Opcion no valida!");
+                            }
+                        }while (val2);
+                        break;
 
-                default:
-                    Console.WriteLine("Opcion no valida");
-                    Thread.Sleep(500);
-                    break;
+                    case 4:
+                        val1 = false;
+                        Console.WriteLine("Saliendo...");
+                        break;
+
+                    default:
+                        Console.WriteLine("Opcion no valida");
+                        Thread.Sleep(500);
+                        break;
                 }
             } while (val1);
         }
