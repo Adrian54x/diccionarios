@@ -38,7 +38,25 @@ namespace Ciudades_por_código
                             ciudad.Add(codigo, ciudad_x);
                         }
                         break;
+
                     case 2:
+                        Console.Write("Ingrese el codigo de la ciudad que busca:");
+                        int buscar = int.Parse(Console.ReadLine());
+                        val2 = true;
+                        foreach(var buscar_x in ciudad)
+                        {
+                            if(buscar == buscar_x.Key)
+                            {
+                                Console.WriteLine($"la ciudad es:{buscar_x.Value}");
+                                val2 = false;
+                            }
+                        }
+                        if(val2)
+                        {
+                            Console.WriteLine("No se encontro la ciudad!");
+                        }
+                        break;
+
                     case 3:
                         do
                         {
