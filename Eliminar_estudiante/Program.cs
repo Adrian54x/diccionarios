@@ -41,25 +41,31 @@ namespace Eliminar_estudiante
                     case 2:
                         if (estudoiantes.Count > 0)
                         {
+                            int eliminar = 0;
                             Console.Write("Ingrese el nombre del estudiante que quiera eliminar:");
                             string buscar = Console.ReadLine();
-                            val2 = true;
-                            foreach (var buscar_x in estudoiantes)
+                            val2 = false;
+                            foreach (var estudiante_x in estudoiantes)
                             {
-                                if (buscar == buscar_x.Value)
+                                if (buscar == estudiante_x.Value)
                                 {
-                                    Console.WriteLine($"la ciudad es:{buscar_x.Value}");
-                                    val2 = false;
+                                    eliminar = estudiante_x.Key;
+                                    val2 = true;
                                 }
                             }
                             if (val2)
                             {
-                                Console.WriteLine("No se encontro la ciudad!");
+                                Console.WriteLine($"Estudiante {buscar} a sido eliminado");
+                                estudoiantes.Remove(eliminar);
+                            }
+                            else
+                            {
+                                Console.WriteLine("No se encontro al estudiante!");
                             }
                         }
                         else
                         {
-                            Console.WriteLine("No ahi aun ningun dato!");
+                            Console.WriteLine("No ahi aun ningun estudiante!");
                         }
                         Console.WriteLine("\nPrecione cualquier tecla para regresar");
                         Console.ReadKey();
