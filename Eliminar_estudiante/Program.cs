@@ -39,14 +39,14 @@ namespace Eliminar_estudiante
                         break;
 
                     case 2:
-                        if (ciudad.Count > 0)
+                        if (estudoiantes.Count > 0)
                         {
-                            Console.Write("Ingrese el codigo de la ciudad que busca:");
-                            int buscar = int.Parse(Console.ReadLine());
+                            Console.Write("Ingrese el nombre del estudiante que quiera eliminar:");
+                            string buscar = Console.ReadLine();
                             val2 = true;
-                            foreach (var buscar_x in ciudad)
+                            foreach (var buscar_x in estudoiantes)
                             {
-                                if (buscar == buscar_x.Key)
+                                if (buscar == buscar_x.Value)
                                 {
                                     Console.WriteLine($"la ciudad es:{buscar_x.Value}");
                                     val2 = false;
