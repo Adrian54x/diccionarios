@@ -19,7 +19,8 @@ namespace Eliminar_estudiante
                 val1 = true;
                 Console.WriteLine("1. Ingresar 3 estudiantes");
                 Console.WriteLine("2. Eliminar estudiantes");
-                Console.WriteLine("3. Salir");
+                Console.WriteLine("3. Vista de estudiantes");
+                Console.WriteLine("4. Salir");
                 Console.Write("Elija una opcion:");
                 int opcion = int.Parse(Console.ReadLine());
                 Console.Clear();
@@ -72,6 +73,21 @@ namespace Eliminar_estudiante
                         break;
 
                     case 3:
+                        if (estudoiantes.Count > 0)
+                        {
+                            foreach (var mostrar in estudoiantes)
+                            {
+                                Console.WriteLine($"\nestudiante:{mostrar.Value} \nCodigo:{mostrar.Key}");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No ahi aun ningun estudiante!");
+                        }
+                        Console.WriteLine("\nPrecione cualquier tecla para regresar");
+                        Console.ReadKey();
+                        break;
+                    case 4:
                         val1 = false;
                         Console.WriteLine("Saliendo...");
                         break;
