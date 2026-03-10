@@ -11,14 +11,14 @@ namespace Eliminar_estudiante
     {
         static void Main(string[] args)
         {
-            Dictionary<int, string> ciudad = new Dictionary<int, string>();
+            Dictionary<int, string> estudoiantes = new Dictionary<int, string>();
             bool val1, val2;
             do
             {
                 Console.Clear();
                 val1 = true;
                 Console.WriteLine("1. Ingresar 3 estudiantes");
-                Console.WriteLine("2. Eliminar ciudades");
+                Console.WriteLine("2. Eliminar estudiantes");
                 Console.WriteLine("3. Salir");
                 Console.Write("Elija una opcion:");
                 int opcion = int.Parse(Console.ReadLine());
@@ -26,15 +26,15 @@ namespace Eliminar_estudiante
                 switch (opcion)
                 {
                     case 1:
-                        Console.WriteLine("Ingrese 5 ciudades");
+                        Console.WriteLine("Ingrese 3 estudiantes");
                         for (int i = 1; i <= 3; i++)
                         {
                             Console.WriteLine($"\n{i}.");
-                            Console.Write("Ciudad:");
-                            string ciudad_x = Console.ReadLine();
+                            Console.Write("Estudiantes:");
+                            string estudiante = Console.ReadLine();
                             Console.Write("Codigo:");
                             int codigo = int.Parse(Console.ReadLine());
-                            ciudad.Add(codigo, ciudad_x);
+                            estudoiantes.Add(codigo, estudiante);
                         }
                         break;
 
