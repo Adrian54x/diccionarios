@@ -11,7 +11,7 @@ namespace Usuarios_y_pass
     {
         static void Main(string[] args)
         {
-            Dictionary<int, string> ciudad = new Dictionary<int, string>();
+            Dictionary<string, string> usuarios = new Dictionary<string, string>();
             bool val1, val2;
             do
             {
@@ -26,16 +26,40 @@ namespace Usuarios_y_pass
                 switch (opcion)
                 {
                     case 1:
-                        Console.Write("Ingrese su su usuario");
+                        Console.Write("Ingrese su su usuario:");
                         string user = Console.ReadLine();
                         Console.Write("Ingrese su contraseña:");
                         string pass = Console.ReadLine();
                         Console.WriteLine("\nUsuario ingresado correctamente");
+                        usuarios.Add(user, pass);
                         Thread.Sleep(500);
                         break;
 
                     case 2:
-                        Console.Write("Ingrese el usuario que desea buscar");
+                        if (usuarios.Count > 0)
+                        {
+                            val2 = true;
+                            Console.Write("Ingrese el usuario que desea buscar:");
+                            string buscar = Console.ReadLine();
+                            foreach (var usuario in usuarios)
+                            {
+                                if (buscar == usuario.Key)
+                                {
+                                    Console.WriteLine($"Contraseña:{usuario.Value}");
+                                    val2 = false;
+                                }
+                            }
+                            if(val2)
+                            {
+                                Console.WriteLine("Usuario no encontrado!");
+                            }
+                        }
+                        else 
+                        {
+                            Console.WriteLine("Aun no ahi usuarios!");
+                        }
+                        Console.WriteLine("\nPrecione cualquier tecla para salir");
+                        Console.ReadKey();
                         break;
 
                     case 3:
