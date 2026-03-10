@@ -26,9 +26,16 @@ namespace Usuarios_y_pass
                 switch (opcion)
                 {
                     case 1:
+                        Console.Write("Ingrese su su usuario");
+                        string user = Console.ReadLine();
+                        Console.Write("Ingrese su contraseña:");
+                        string pass = Console.ReadLine();
+                        Console.WriteLine("\nUsuario ingresado correctamente");
+                        Thread.Sleep(500);
                         break;
 
                     case 2:
+                        Console.Write("Ingrese el usuario que desea buscar");
                         break;
 
                     case 3:
