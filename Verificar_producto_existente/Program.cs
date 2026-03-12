@@ -32,9 +32,18 @@ namespace Verificar_producto_existente
                         cont1 = 1;
                         do
                         {
+                            string producto;
                             val1 = true;
-                            Console.Write($"\n{cont1}. Producto:");
-                            string producto = Console.ReadLine();
+                            do
+                            {
+                                val2 = true;
+                                Console.Write($"\n{cont1}. Producto:");
+                                producto = Console.ReadLine();
+                                if (productos.ContainsKey(producto))
+                                {
+                                    Console.WriteLine("ya esta en la lista ingrese otro!");
+                                }
+                            } while ();
                             if(producto == "")
                             {
                                 Console.WriteLine("Regresando...");
@@ -53,6 +62,8 @@ namespace Verificar_producto_existente
                         {
                             Console.WriteLine($"{cont1}. Producto:{producto_x.Key} \n Codigo:{producto_x.Value}");
                         }
+                        Console.WriteLine("\nPrecione cualquier tecla para regresar");
+                        Console.ReadKey();
                         break;
 
                     case 3:
