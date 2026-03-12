@@ -36,14 +36,15 @@ namespace Verificar_producto_existente
                             val1 = true;
                             do
                             {
-                                val2 = true;
+                                val2 = false;
                                 Console.Write($"\n{cont1}. Producto:");
                                 producto = Console.ReadLine();
                                 if (productos.ContainsKey(producto))
                                 {
                                     Console.WriteLine("ya esta en la lista ingrese otro!");
+                                    val2 = true;
                                 }
-                            } while ();
+                            } while (val2);
                             if(producto == "")
                             {
                                 Console.WriteLine("Regresando...");
